@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2026跨年祝福</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=ZCOOL+KuaiLe&family=Long+Cang&display=swap" rel="stylesheet">
+    <!-- 导入楷书/行楷字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=ZCOOL+KuaiLe&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -156,32 +157,55 @@
             font-family: 'ZCOOL KuaiLe', cursive;
         }
         
-        /* 平安喜乐，诸事顺遂 - 燕麦色 #F5F5DC，加粗，艺术字体 */
-        .blessing-text .blessing-words {
+        /* 平安喜乐，诸事顺遂 - 分行显示，楷书/行楷字体 */
+        .blessing-words {
             color: #F5F5DC;
             font-weight: bold;
-            font-family: 'Long Cang', 'Ma Shan Zheng', 'STKaiti', 'KaiTi', 'Microsoft YaHei', cursive;
-            font-size: 2.4rem;
+            font-size: 2.6rem;
             margin: 20px 0;
-            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
             letter-spacing: 2px;
-            padding: 10px;
+            padding: 15px 0;
             position: relative;
+            line-height: 1.8;
         }
         
-        .blessing-text .blessing-words::before,
-        .blessing-text .blessing-words::after {
-            content: "❖";
-            color: #FFD700;
-            margin: 0 15px;
-            font-size: 1.8rem;
+        /* 平安喜乐 - 第一行 - 楷书/行楷字体 */
+        .blessing-line1 {
+            font-family: 'Noto Serif SC', 'Ma Shan Zheng', 'STKaiti', 'KaiTi', 'Microsoft YaHei', serif;
+            display: block;
+            margin-bottom: 5px;
+            position: relative;
+            font-weight: 700;
+        }
+        
+        /* 诸事顺遂 - 第二行 - 楷书/行楷字体 */
+        .blessing-line2 {
+            font-family: 'Noto Serif SC', 'Ma Shan Zheng', 'STKaiti', 'KaiTi', 'Microsoft YaHei', serif;
+            display: block;
+            position: relative;
+            font-weight: 700;
+        }
+        
+        /* 楷书字体装饰效果 */
+        .blessing-line1::before,
+        .blessing-line2::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 15%;
+            width: 70%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.5), transparent);
+            opacity: 0.7;
         }
         
         .victory {
-            font-size: 2rem;
-            margin-left: 15px;
+            font-size: 1.8rem;
+            margin-left: 12px;
             display: inline-block;
             animation: bounce 1.5s infinite;
+            vertical-align: middle;
         }
         
         @keyframes bounce {
@@ -189,8 +213,28 @@
             50% { transform: translateY(-5px); }
         }
         
+        /* 两侧装饰 */
+        .blessing-words::before,
+        .blessing-words::after {
+            content: "❖";
+            color: #FFD700;
+            margin: 0 10px;
+            font-size: 1.8rem;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .blessing-words::before {
+            left: -15px;
+        }
+        
+        .blessing-words::after {
+            right: -15px;
+        }
+        
         .emoji-row {
-            margin-top: 15px;
+            margin-top: 20px;
             font-size: 2.5rem;
             letter-spacing: 15px;
         }
@@ -302,12 +346,30 @@
                 font-size: 1.9rem;
             }
             
-            .blessing-text .blessing-words {
+            .blessing-words {
+                font-size: 2rem;
+            }
+            
+            .blessing-line1,
+            .blessing-line2 {
                 font-size: 2rem;
             }
             
             .victory {
-                font-size: 1.6rem;
+                font-size: 1.4rem;
+            }
+            
+            .blessing-words::before,
+            .blessing-words::after {
+                font-size: 1.4rem;
+            }
+            
+            .blessing-words::before {
+                left: -10px;
+            }
+            
+            .blessing-words::after {
+                right: -10px;
             }
             
             .signature {
@@ -354,12 +416,30 @@
                 font-size: 1.6rem;
             }
             
-            .blessing-text .blessing-words {
+            .blessing-words {
+                font-size: 1.7rem;
+            }
+            
+            .blessing-line1,
+            .blessing-line2 {
                 font-size: 1.7rem;
             }
             
             .victory {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
+            }
+            
+            .blessing-words::before,
+            .blessing-words::after {
+                font-size: 1.2rem;
+            }
+            
+            .blessing-words::before {
+                left: -8px;
+            }
+            
+            .blessing-words::after {
+                right: -8px;
             }
             
             .signature {
@@ -405,8 +485,11 @@
             <div class="blessing-container" id="blessing">
                 <div class="blessing-text">
                     <span class="name">亲爱的姜老师</span><span class="clover">🍀</span><br>
-                    <span class="year">2026年跨年快乐！</span><br>
-                    <div class="blessing-words">平安喜乐，诸事顺遂<span class="victory">[耶]✌</span></div>
+                    <span class="year">2026年跨年快乐！</span>
+                    <div class="blessing-words">
+                        <span class="blessing-line1">平安喜乐</span>
+                        <span class="blessing-line2">诸事顺遂<span class="victory">[耶]✌</span></span>
+                    </div>
                 </div>
                 <div class="emoji-row">
                     <i class="fas fa-heart"></i>
