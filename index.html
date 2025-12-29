@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2026跨年祝福</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=ZCOOL+KuaiLe&family=Long+Cang&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
         }
         
         body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
             background-color: #002FA7; /* 克莱因蓝 */
             color: #FFFFFF;
             min-height: 100vh;
@@ -124,14 +125,68 @@
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
         
+        /* 亲爱的姜老师 - 橙色 #FF9800，添加四叶草 */
         .blessing-text .name {
-            color: #FFD700;
+            color: #FF9800;
             font-weight: bold;
+            font-size: 2.2rem;
+            text-shadow: 0 0 8px rgba(255, 152, 0, 0.5);
         }
         
+        .clover {
+            font-size: 2.2rem;
+            margin-left: 10px;
+            display: inline-block;
+            animation: gentleShake 2s infinite;
+        }
+        
+        @keyframes gentleShake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(10deg); }
+            75% { transform: rotate(-10deg); }
+        }
+        
+        /* 2026年跨年快乐！ - 大红色 #FF0000 */
         .blessing-text .year {
-            color: #FF4081;
+            color: #FF0000;
             font-weight: bold;
+            text-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
+            font-size: 2.3rem;
+            margin: 10px 0;
+            font-family: 'ZCOOL KuaiLe', cursive;
+        }
+        
+        /* 平安喜乐，诸事顺遂 - 燕麦色 #F5F5DC，加粗，艺术字体 */
+        .blessing-text .blessing-words {
+            color: #F5F5DC;
+            font-weight: bold;
+            font-family: 'Long Cang', 'Ma Shan Zheng', 'STKaiti', 'KaiTi', 'Microsoft YaHei', cursive;
+            font-size: 2.4rem;
+            margin: 20px 0;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+            letter-spacing: 2px;
+            padding: 10px;
+            position: relative;
+        }
+        
+        .blessing-text .blessing-words::before,
+        .blessing-text .blessing-words::after {
+            content: "❖";
+            color: #FFD700;
+            margin: 0 15px;
+            font-size: 1.8rem;
+        }
+        
+        .victory {
+            font-size: 2rem;
+            margin-left: 15px;
+            display: inline-block;
+            animation: bounce 1.5s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
         }
         
         .emoji-row {
@@ -140,9 +195,54 @@
             letter-spacing: 15px;
         }
         
-        .emoji-row i {
+        /* 爱心改为红色 */
+        .emoji-row .fa-heart {
+            color: #FF0000;
+            text-shadow: 0 0 12px rgba(255, 0, 0, 0.8);
+            animation: heartbeat 1.2s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        /* 太阳花保持金色 */
+        .emoji-row .fa-sun {
             color: #FFD700;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+            text-shadow: 0 0 12px rgba(255, 215, 0, 0.9);
+            animation: rotateSun 10s infinite linear;
+        }
+        
+        @keyframes rotateSun {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* 落款样式 */
+        .signature {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.3);
+            font-family: 'ZCOOL XiaoWei', serif;
+            font-size: 1.8rem;
+            color: #E0E0E0;
+            letter-spacing: 1px;
+            position: relative;
+        }
+        
+        .signature .black-star {
+            color: #000000;
+            font-size: 1.6rem;
+            margin-left: 8px;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+            display: inline-block;
+            animation: twinkle 2s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
         
         .fireworks-btn {
@@ -190,6 +290,34 @@
                 font-size: 1.6rem;
             }
             
+            .blessing-text .name {
+                font-size: 1.8rem;
+            }
+            
+            .clover {
+                font-size: 1.8rem;
+            }
+            
+            .blessing-text .year {
+                font-size: 1.9rem;
+            }
+            
+            .blessing-text .blessing-words {
+                font-size: 2rem;
+            }
+            
+            .victory {
+                font-size: 1.6rem;
+            }
+            
+            .signature {
+                font-size: 1.5rem;
+            }
+            
+            .signature .black-star {
+                font-size: 1.4rem;
+            }
+            
             .emoji-row {
                 font-size: 2rem;
                 letter-spacing: 10px;
@@ -212,6 +340,34 @@
             
             .blessing-text {
                 font-size: 1.3rem;
+            }
+            
+            .blessing-text .name {
+                font-size: 1.5rem;
+            }
+            
+            .clover {
+                font-size: 1.5rem;
+            }
+            
+            .blessing-text .year {
+                font-size: 1.6rem;
+            }
+            
+            .blessing-text .blessing-words {
+                font-size: 1.7rem;
+            }
+            
+            .victory {
+                font-size: 1.3rem;
+            }
+            
+            .signature {
+                font-size: 1.2rem;
+            }
+            
+            .signature .black-star {
+                font-size: 1.1rem;
             }
             
             .emoji-row {
@@ -248,13 +404,16 @@
             
             <div class="blessing-container" id="blessing">
                 <div class="blessing-text">
-                    <span class="name">亲爱的姜老师</span>，<br>
+                    <span class="name">亲爱的姜老师</span><span class="clover">🍀</span><br>
                     <span class="year">2026年跨年快乐！</span><br>
-                    平安喜乐，诸事顺遂
+                    <div class="blessing-words">平安喜乐，诸事顺遂<span class="victory">[耶]✌</span></div>
                 </div>
                 <div class="emoji-row">
                     <i class="fas fa-heart"></i>
                     <i class="fas fa-sun"></i>
+                </div>
+                <div class="signature">
+                    --您坚定不移滴姜丝~<span class="black-star">✦</span>
                 </div>
             </div>
         </div>
@@ -464,6 +623,34 @@
             fireworks.push(sunflowerFirework);
         }
         
+        // 创建四叶草烟花
+        function createCloverFirework() {
+            const x = canvas.width / 2;
+            const y = canvas.height / 2;
+            const cloverFirework = new Firework(x, y);
+            cloverFirework.particleCount = 160;
+            cloverFirework.particles = [];
+            
+            // 创建四叶草粒子分布
+            for (let i = 0; i < cloverFirework.particleCount; i++) {
+                const angle = Math.PI * 2 * i / cloverFirework.particleCount;
+                const radius = 4 * Math.sqrt(i);
+                const cloverX = radius * Math.cos(2*angle) * Math.cos(angle);
+                const cloverY = radius * Math.cos(2*angle) * Math.sin(angle);
+                
+                const particle = new Particle(x, y, '#4CAF50');
+                particle.x = x + cloverX * 3;
+                particle.y = y + cloverY * 3;
+                particle.velocity.x = cloverX * 0.15;
+                particle.velocity.y = cloverY * 0.15;
+                particle.size = 1.5 + Math.random() * 2.5;
+                
+                cloverFirework.particles.push(particle);
+            }
+            
+            fireworks.push(cloverFirework);
+        }
+        
         // 动画循环
         function animate() {
             // 清除画布
@@ -523,9 +710,10 @@
                         // 创建中央大型烟花
                         createCentralFirework();
                         
-                        // 创建心形和太阳花烟花
-                        setTimeout(() => createHeartFirework(), 1000);
-                        setTimeout(() => createSunflowerFirework(), 2000);
+                        // 创建特殊烟花
+                        setTimeout(() => createHeartFirework(), 800);
+                        setTimeout(() => createSunflowerFirework(), 1600);
+                        setTimeout(() => createCloverFirework(), 2400);
                         
                         isCountdownActive = false;
                     }, 800);
